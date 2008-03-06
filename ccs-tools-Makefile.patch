@@ -1,0 +1,19 @@
+--- ccstools/Makefile~	2008-03-05 12:11:08.000000000 +0100
++++ ccstools/Makefile	2008-03-05 12:14:49.672333658 +0100
+@@ -14,16 +14,11 @@
+ 
+ install:
+ 	mkdir -p $(INSTALLDIR)/usr/lib/ccs/misc $(INSTALLDIR)/sbin $(INSTALLDIR)/usr/sbin
+-	chmod 700 $(INSTALLDIR)/usr/lib/ccs
+-	chmod 755 domainmatch init_policy.sh tomoyo_init_policy.sh
+ 	cp -af --remove-destination ccstools $(INSTALLDIR)/usr/lib/ccs/
+ 	for i in $(ALIAS_LIST); do ln -f $(INSTALLDIR)/usr/lib/ccs/ccstools $(INSTALLDIR)/usr/lib/ccs/$$i; done
+ 	for i in $(ALIAS_LIST); do ln -sf /usr/lib/ccs/$$i $(INSTALLDIR)/usr/sbin/ccs-`echo $$i | sed 's:^ccs-::'`; done
+ 	cp -af --remove-destination realpath domainmatch init_policy.sh tomoyo_init_policy.sh $(INSTALLDIR)/usr/lib/ccs/
+ 	cp -af --remove-destination $(MISC_FILES) $(INSTALLDIR)/usr/lib/ccs/misc/
+-	chown -R root:root ccs-init tomoyo-init $(INSTALLDIR)/usr/lib/ccs/
+-	chmod 4755 $(INSTALLDIR)/usr/lib/ccs/misc/proxy
+-	chmod 700 ccs-init tomoyo-init
+ 	cp -af --remove-destination ccs-init tomoyo-init $(INSTALLDIR)/sbin/
+ 	mkdir -p $(INSTALLDIR)/usr/share/man/man8/
+ 	cp -af --remove-destination man/man8/* $(INSTALLDIR)/usr/share/man/man8/
