@@ -13,17 +13,19 @@ diff -upr ccstools./ccstools.src/ccstools.h ccstools/ccstools.src/ccstools.h
 diff -upr ccstools./Makefile ccstools/Makefile
 --- ccstools./Makefile	2008-01-31 13:00:00.000000000 +0100
 +++ ccstools/Makefile	2008-03-05 12:04:23.715354234 +0100
-@@ -32,18 +32,14 @@ CC=gcc
+@@ -32,20 +32,15 @@ CC=gcc
  
  CFLAGS=-Wall -O2 ${shell $(CC) -Wno-pointer-sign -S -o /dev/null -x c - < /dev/null > /dev/null 2>&1 && echo "-Wno-pointer-sign"}
  
 -/usr/include/curses.h:
 -	@echo "/usr/include/curses.h is missing."
 -	@echo "Run 'yum install ncurses-devel' or 'apt-get install libncurses5-dev'"
+-	sleep 10
 -
  /usr/include/readline/readline.h:
  	@echo "/usr/include/readline/readline.h is missing."
  	@echo "Run 'yum install readline-devel' or 'apt-get install libreadline5-dev'"
+ 	sleep 10
  
 -ccstools: ccstools.src/*.c ccstools.src/*.h /usr/include/curses.h
 +ccstools: ccstools.src/*.c ccstools.src/*.h
