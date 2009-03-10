@@ -1,4 +1,5 @@
 Summary:	TOMOYO Linux tools
+Summary(pl.UTF-8):	Narzędzia TOMOYO Linux
 Name:		ccs-tools
 Version:	1.6.6
 Release:	1
@@ -12,7 +13,10 @@ URL:		http://tomoyo.sourceforge.jp/
 Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-This is TOMOYO Linux tools.
+This package contains TOMOYO Linux tools.
+
+%description -l pl.UTF-8
+Ten pakiet zawiera narzędzia TOMOYO Linux.
 
 %prep
 %setup -q -n ccstools
