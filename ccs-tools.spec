@@ -10,7 +10,7 @@ Source0:	http://osdn.dl.sourceforge.jp/tomoyo/30298/%{name}-%{version}-20090202.
 Patch0:		%{name}-ncurses.patch
 Patch1:		%{name}-Makefile.patch
 URL:		http://tomoyo.sourceforge.jp/
-Buildroot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 This package contains TOMOYO Linux tools.
